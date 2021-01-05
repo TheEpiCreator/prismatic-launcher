@@ -1,0 +1,27 @@
+{
+  "name": "prismatic-launcher",
+  "version": "1.0.0",
+  "description": "A launcher for the Prismatic Minecraft Client",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheEpiCreator/prismatic-launcher.git"
+  },
+  "keywords": [
+    "launcher",
+    "prismatic",
+    "minecraft"
+  ],
+  "author": "EPCR",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/TheEpiCreator/prismatic-launcher/issues"
+  },
+  "homepage": "https://github.com/TheEpiCreator/prismatic-launcher#readme",
+  "devDependencies": {
+    "electron": "^11.1.1"
+  }
+}
