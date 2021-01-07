@@ -1,3 +1,228 @@
-b {
-    background-color: red;
+/* This is currently a stripped-down version of the website CSS file */
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
+/* Main */
+
+* {
+    /* Default margin/padding to 0 for everything */
+    margin: 0;
+    padding: 0;
+    /* Better Text */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*::selection {
+    background-color: var(--highlight);
+    color: var(--highlight-mod);
+}
+
+:root {
+    font-size: 16px;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    --transition-speed: 300ms;
+    --tranistion-timing: cubic-bezier(.31, .03, 0, 1);
+    --navbar-width: 5rem;
+    --navbar-height: 0;
+}
+
+body {
+    border-width: 5px;
+    border-style: solid;
+    border-image-source: linear-gradient(to bottom right, var(--contrast), var(--contrast-secondary));
+    border-image-slice: 1;
+    background-color: var(--background);
+    width: calc(100vw - 10px);
+    height: calc(100vh - 10px);
+    margin: 0;
+    padding: 0;
+    /* Theme-unbiased palette */
+    --light-main: #fff;
+    --light-main-mod: #ebedef;
+    --light-background: #f2f3f5;
+    --light-background-mod: #e8eaed;
+    --light-contrast: #7a9fe4;
+    --light-contrast-shadow: #657ead;
+    --light-contrast-glow: #d0dfff;
+    --light-contrast-mod: #75dddd;
+    --light-contrast-mod-shadow: #6cc4c4;
+    --light-contrast-mod-glow: #aeffff;
+    --light-contrast-secondary: #ad8aff;
+    --light-contrast-secondary-shadow: #a187dd;
+    --light-contrast-secondary-glow: #b899ff;
+    --light-contrast-secondary-mod: #ffb7f9;
+    --light-contrast-secondary-mod-shadow: #e49dde;
+    --light-contrast-secondary-mod-glow: #ffe6fd;
+    --light-main-invert: #2e3338;
+    --light-main-invert-mod: #323f4d;
+    --light-main-grad: var(--light-main);
+    --light-background-mod-grad: var(--light-background-mod);
+    --light-contrast-grad: var(--light-contrast);
+    --light-highlight: #bfa4ffb0;
+    --light-btn-stem-col: #bb7ee4;
+    --light-discord-red-1: #f04747;
+    --light-discord-green-1: #43b581;
+    --light-discord-green-2: #3ca374;
+    --light-discord-blue-1: #7289da;
+    --light-discord-grayscale-1: #e3e5e8;
+    --light-discord-grayscale-2: #f2f3f5;
+    --light-discord-grayscale-3: #888;
+    --light-discord-contrast-1: #060607;
+    --light-discord-contrast-2: #4f5660;
+    /* Dark theme unbiased */
+    --dark-main: #25292D;
+    --dark-main-mod: #28333E;
+    --dark-background: #080A0B;
+    --dark-background-mod: #1B1F22;
+    --dark-contrast: #1C4187;
+    --dark-contrast-shadow: #1c3d7a;
+    --dark-contrast-glow: #4385ff;
+    --dark-contrast-mod: #31C4C4;
+    --dark-contrast-mod-shadow: #30b6b6;
+    --dark-contrast-mod-glow: #7affff;
+    --dark-contrast-secondary: #B800A8;
+    --dark-contrast-secondary-shadow: #97278e;
+    --dark-contrast-secondary-glow: #ff53f1;
+    --dark-contrast-secondary-mod: #9B70FF;
+    --dark-contrast-secondary-mod-shadow: #8e6ae0;
+    --dark-contrast-secondary-mod-glow: #dfd2ff;
+    --dark-main-invert: #E8EAED;
+    --dark-main-invert-mod: #F2F3F5;
+    --dark-main-grad: var(--dark-main);
+    --dark-background-mod-grad: var(--dark-background-mod);
+    --dark-contrast-grad: var(--dark-contrast);
+    --dark-highlight: #bfa4ffb0;
+    --dark-highlight-mod: #fff;
+    --dark-discord-red-1: #f04747;
+    --dark-discord-green-1: #43b581;
+    --dark-discord-green-2: #3ca374;
+    --dark-discord-blue-1: #7289da;
+    --dark-discord-grayscale-1: #e3e5e8;
+    --dark-discord-grayscale-2: #f2f3f5;
+    --dark-discord-grayscale-3: #888;
+    --dark-discord-contrast-1: #060607;
+    --dark-discord-contrast-2: #4f5660;
+}
+
+p {
+    color: var(--main-invert-mod)
+}
+
+/* Themes */
+
+/* Default Theme */
+
+.light {
+    --main: var(--light-main);
+    --main-mod: var(--light-main-mod);
+    --background: var(--light-background);
+    --background-mod: var(--light-background-mod);
+    --contrast: var(--light-contrast);
+    --contrast-shadow: var(--light-contrast-shadow);
+    --contrast-glow: var(--light-contrast-glow);
+    --contrast-mod: var(--light-contrast-mod);
+    --contrast-mod-shadow: var(--light-contrast-mod-shadow);
+    --contrast-mod-glow: var(--light-contrast-mod-glow);
+    --contrast-secondary: var(--light-contrast-secondary);
+    --contrast-secondary-shadow: var(--light-contrast-secondary-shadow);
+    --contrast-secondary-glow: var(--light-contrast-secondary-glow);
+    --contrast-secondary-mod: var(--light-contrast-secondary-mod);
+    --contrast-secondary-mod-shadow: var(--light-contrast-secondary-mod-shadow);
+    --contrast-secondary-mod-glow: var(--light-contrast-secondary-mod-glow);
+    --main-invert: var(--light-main-invert);
+    --main-invert-mod: var(--light-main-invert-mod);
+    --main-grad: var(--main);
+    --background-mod-grad: var(--background-mod);
+    --contrast-grad: var(--contrast);
+    --highlight: var(--light-highlight);
+    --btn-stem-col: var(--light-btn-stem-col);
+    --discord-red-1: var(--light-discord-red-1);
+    --discord-green-1: var(--light-discord-green-1);
+    --discord-green-2: var(--light-discord-green-2);
+    --discord-blue-1: var(--light-discord-blue-1);
+    --discord-grayscale-1: var(--light-discord-grayscale-1);
+    --discord-grayscale-2: var(--light-discord-grayscale-2);
+    --discord-grayscale-3: var(--light-discord-grayscale-3);
+    --discord-contrast-1: var(--light-discord-contrast-1);
+    --discord-contrast-2: var(--light-discord-contrast-2);
+}
+
+/* Theme before loading preference (don't hurt dark mode users' eyes */
+
+.dark, body {
+    --main: var(--dark-main);
+    --main-mod: var(--dark-main-mod);
+    --background: var(--dark-background);
+    --background-mod: var(--dark-background-mod);
+    --contrast: var(--dark-contrast);
+    --contrast-shadow: var(--dark-contrast-shadow);
+    --contrast-glow: var(--dark-contrast-glow);
+    --contrast-mod: var(--dark-contrast-mod);
+    --contrast-mod-shadow: var(--dark-contrast-mod-shadow);
+    --contrast-mod-glow: var(--dark-contrast-mod-glow);
+    --contrast-secondary: var(--dark-contrast-secondary);
+    --contrast-secondary-shadow: var(--dark-contrast-secondary-shadow);
+    --contrast-secondary-glow: var(--dark-contrast-secondary-glow);
+    --contrast-secondary-mod: var(--dark-contrast-secondary-mod);
+    --contrast-secondary-mod-shadow: var(--dark-contrast-secondary-mod-shadow);
+    --contrast-secondary-mod-glow: var(--dark-contrast-secondary-mod-glow);
+    --main-invert: var(--dark-main-invert);
+    --main-invert-mod: var(--dark-main-invert-mod);
+    --main-grad: var(--main);
+    --background-mod-grad: var(--background-mod);
+    --contrast-grad: var(--contrast);
+    --highlight: var(--dark-highlight);
+    --highlight-mod: var(--dark-highlight-mod);
+    --discord-red-1: var(--dark-discord-red-1);
+    --discord-green-1: var(--dark-discord-green-1);
+    --discord-green-2: var(--dark-discord-green-2);
+    --discord-blue-1: var(--dark-discord-blue-1);
+    --discord-grayscale-1: var(--dark-discord-grayscale-1);
+    --discord-grayscale-2: var(--dark-discord-grayscale-2);
+    --discord-grayscale-3: var(--dark-discord-grayscale-3);
+    --discord-contrast-1: var(--dark-discord-contrast-1);
+    --discord-contrast-2: var(--dark-discord-contrast-2);
+}
+
+.svg-primary {
+    color: var(--contrast);
+}
+
+.svg-primary.mod {
+    color: var(--contrast-mod);
+}
+
+.svg-secondary {
+    color: var(--contrast-secondary);
+}
+
+.svg-secondary.mod {
+    color: var(--contrast-secondary-mod);
+}
+
+/* Main */
+
+main {
+    /* Text */
+    color: var(--main-invert);
+}
+
+#content {
+    min-height: 100vh;
+}
+
+/* If links exist, they are probably being used as buttons.
+Remove the underline. */
+
+a {
+    text-decoration: none;
+}
+
+/* Hide scrollbar, it isn't supposed to exist */
+
+::-webkit-scrollbar {
+    display: none;
 }

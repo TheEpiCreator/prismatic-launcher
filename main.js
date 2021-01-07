@@ -9,8 +9,13 @@ let win
 // Create browser
 function createWindow() {
     win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1920,
+        height: 1080,
+        minWidth: 480,
+        minHeight: 360,
+        acceptFirstMouse: true,
+        // TODO: make frameless after implementing custom dragbar (like firefox)
+        frame: true,
         webPreferences: {
             nodeIntegration: true
         }
