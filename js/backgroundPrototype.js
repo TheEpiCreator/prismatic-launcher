@@ -43,8 +43,6 @@ function animate(){
 
     const t = clock.getElapsedTime();
 
-    
-
     flag.geometry.vertices.map(v => {
         const waveX1 = 0.5 * Math.sin(v.x * 2 + t);
         const waveX2 = 0.25 * Math.sin(v.x * 3 + t);
