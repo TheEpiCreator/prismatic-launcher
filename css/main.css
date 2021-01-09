@@ -9,6 +9,7 @@
     /* Default margin/padding to 0 for everything */
     margin: 0;
     padding: 0;
+    border: 0;
     /* Better Text */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: subpixel-antialiased;
