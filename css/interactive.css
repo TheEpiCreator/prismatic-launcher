@@ -47,5 +47,5 @@
 /* Background */
 
 canvas.bg {
-    
+    position: fixed;
 }

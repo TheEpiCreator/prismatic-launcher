@@ -1,7 +1,7 @@
 {
   "name": "prismatic-launcher",
   "version": "0.0.1",
-  "description": "A launcher for the Prismatic Minecraft Client",
+  "description": "A launcher for the Prismatic Client for Minecraft",
   "main": "main.js",
   "scripts": {
     "test": "node index.html",
@@ -16,7 +16,16 @@
     "prismatic",
     "minecraft"
   ],
-  "author": "EPCR",
+  "author": {
+    "name": "EPCR",
+    "email": "epcrmail@gmail.com",
+    "url": "https://epcr.dev"
+  },
+  "contributors": [
+    {
+      "name": "Python4400"
+    }
+  ],
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/TheEpiCreator/prismatic-launcher/issues"
