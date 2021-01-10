@@ -15,7 +15,8 @@ var renderer = new THREE.WebGLRenderer({ antialias: true })
 // Create HTMLTag instance
 var rendererElement = new HTMLKit.Tag("p")
 rendererElement.reference(renderer.domElement)
-rendererElement.toPosition("last")
+rendererElement.parent = document.body
+rendererElement.toPosition("first")
 rendererElement.tag.classList.add("bg")
 
 
@@ -28,7 +29,6 @@ const resize = () => {
     camera.updateProjectionMatrix()
 }
 resize()
-document.body.appendChild(renderer.domElement)
 
 // setup lighting
 var light = new THREE.AmbientLight(0x404040, 0.2)

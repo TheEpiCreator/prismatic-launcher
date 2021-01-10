@@ -63,6 +63,10 @@ export class Tag {
         return this
     }
 
+    /**
+     * Adds attributes to the tag. If an attribute already exists, it is overriden.
+     * @param {String[]} attributes The attributes to add to the tag
+     */
     set attributes(attributes) {
         //store type before change for comparison
         let attributesOld = this._attributes
@@ -70,12 +74,11 @@ export class Tag {
         this._attributes = attributes
         //check if new type is different to avoid unnecesary performance drops
         if (this._attributes !== attributesOld) {
-            //create temporary pointer to new tag
-            let newTag = new Tag(this.type, this._attributes, this.parent, this.children)
-            //destroy old tag
-            this.remove()
-            //set permanent tag pointer to new tag
-            this._tag = newTag.tag
+            //loop through and set attributes
+            for (const [key, value] of Object.entries(this._attributes)) {
+                //set attributes
+                this._tag.setAttribute(key, value)
+            }
         }
     }
 
@@ -86,12 +89,7 @@ export class Tag {
         this._parent = parent
         //check if new type is different to avoid unnecesary performance drops
         if (this._parent !== parentOld) {
-            //create temporary pointer to new tag
-            let newTag = new Tag(this.type, this.attributes, this._parent, this.children)
-            //destroy old tag
-            this.remove()
-            //set permanent tag pointer to new tag
-            this._tag = newTag.tag
+            parent.append(this.tag)
         }
     }
 
@@ -153,7 +151,7 @@ export class Tag {
 
     get parent() {
         this._parent = this.tag.parentNode
-        if(!this._parent) this.parent = document.body
+        if (!this._parent) this.parent = document.body
         return this._parent
     }
 
