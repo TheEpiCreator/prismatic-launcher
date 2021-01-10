@@ -12,6 +12,7 @@ camera.rotation.x = 0.2
 // setup render pipeline
 var renderer = new THREE.WebGLRenderer({ antialias: true })
 // setup canvas
+
 // Create HTMLTag instance
 var rendererElement = new HTMLKit.Tag("p")
 rendererElement.reference(renderer.domElement)

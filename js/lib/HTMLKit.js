@@ -117,7 +117,7 @@ export class Tag {
         //check if new type is different to avoid unnecesary performance drops
         if (this._type !== typeOld) {
             //create temporary pointer to new tag
-            let newTag = new (this._type, this.attributes, this.parent, this.children)
+            let newTag = new Tag(this._type, this.attributes, this.parent, this.children)
             //destroy old tag
             this.remove()
             //set permanent tag pointer to new tag
